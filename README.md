@@ -6,4 +6,6 @@ Primer proyecto de programación
 # Instalación
 
 Descargar el projecto del repositorio usando el siguiente comando:
-git clone URL
+<p align="center">git clone URL</p>
+
+
