@@ -10,7 +10,8 @@ public class Empresa {
     private String email;
     private boolean softDelete;
 
-    public Empresa(String name, String address, String fax, String email) {
+    public Empresa(int id,String name, String address, String fax, String email) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.fax = fax;
