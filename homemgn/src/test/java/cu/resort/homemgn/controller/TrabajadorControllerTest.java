@@ -44,9 +44,16 @@ public class TrabajadorControllerTest {
     
     public void leer(int id){
     }
-    
-    public void atualizar(){
-        
+    @Test
+    public void actualizar(){
+                String name = "Orlandito";
+        String address = "Varadero";
+        String ci = "12345";
+        Trabajador trabajador = trabajadorController.actualizar(name, address, ci);
+        assertEquals(trabajador.getName(),name);
+        assertEquals(trabajador.getAddress(),address);
+        assertEquals(trabajador.getCI(),ci);
+        assertEquals(trabajador.getId(),0);
     }
     
     public void remover(){

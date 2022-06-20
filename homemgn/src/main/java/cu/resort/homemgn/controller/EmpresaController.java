@@ -17,25 +17,28 @@ public class EmpresaController {
     public Empresa crear(String name, String address, String fax, String email){
         List<Empresa> empresas = cadenaController.leer().getEmpresas();
         Empresa empresa = new Empresa(empresas.size(),name,address,fax, email);
-      
+        empresas.add(empresa);
+        return empresa;
     }
     
-    public Optional<Trabajador> leer(int id){
-        List<Trabajador> trabajadores = cadenaController.leer().getTrabajadores();
-        if(id<trabajadores.size() && !trabajadores.get(id).isSoftDelete())
-            return Optional.of(trabajadores.get(id));
+    public Optional<Empresa> leer(int id){
+        List<Empresa> empresas = cadenaController.leer().getEmpresas();
+        if(id<empresas.size() && !empresas.get(id).isSoftDelete())
+            return Optional.of(empresas.get(id));
         return Optional.empty();
     }
     
-    public Optional<Trabajador> actualizar(int id, String name, String address, String CI){
-        Optional<Trabajador> trabajadorOpt = leer(id);
-        if(trabajadorOpt.isPresent()){
-            Trabajador trabajador = trabajadorOpt.get();
-            trabajador.setName(name);
-            trabajador.setAddress(address);
-            trabajador.setCI(CI);
+    public Optional<Empresa> actualizar(int id, String name, String address, String fax, String email){
+        Optional<Empresa> empresaOpt = leer(id);
+        if(empresaOpt.isPresent()){
+         Empresa empresa = empresaOpt.get();
+         empresa.setAddress(address);
+         empresa.setEmail(email);
+         empresa.setName(name);
+         empresa.setFax(fax);
+         
         }
-        return trabajadorOpt;
+        return empresaOpt;
     }
     
     public boolean remover(int id){
