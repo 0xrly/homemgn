@@ -6,7 +6,7 @@ import cu.resort.homemgn.model.Cadena;
 
 
 //SINGLETON
-public class CadenaController {
+public class CalculoController {
     private static Cadena cadena;
     
     public Cadena crear(){

@@ -2,14 +2,15 @@
 package cu.resort.homemgn.model;
 
 
-public class Contrato {
+public abstract class Contrato {
     private int id;
     protected int daysQty;
     protected double cost;
     protected Casa casa;
     private boolean softDelete;
 
-    public Contrato(int daysQty, double cost, Casa casa) {
+    public Contrato(int id,int daysQty, double cost, Casa casa) {
+        this.id = id;
         this.daysQty = daysQty;
         this.cost = cost;
         this.casa = casa;
