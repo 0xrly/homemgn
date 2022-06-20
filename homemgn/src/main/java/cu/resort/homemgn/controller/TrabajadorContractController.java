@@ -34,10 +34,10 @@ public class TrabajadorContractController {
         return Optional.empty();
     }
     
-    public Optional<Trabajador> leer(int id){
-        List<Trabajador> trabajadores = cadenaController.leer().getTrabajadores();
-        if(id<trabajadores.size() && !trabajadores.get(id).isSoftDelete())
-            return Optional.of(trabajadores.get(id));
+    public Optional<Contrato> leer(int id){
+        List<Contrato> contratos = cadenaController.leer().getContratos();
+        if(id<contratos.size() && !contratos.get(id).isSoftDelete())
+            return Optional.of(contratos.get(id));
         return Optional.empty();
     }
     
