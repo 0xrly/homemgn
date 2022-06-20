@@ -9,6 +9,13 @@ public class ContratoEmpresa extends Contrato{
         super(id,daysQty, cost, casa);
         this.empresa = empresa;
     }
-    
-    
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
 }

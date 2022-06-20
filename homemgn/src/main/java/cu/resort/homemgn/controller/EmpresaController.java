@@ -42,12 +42,12 @@ public class EmpresaController {
     }
     
     public boolean remover(int id){
-        Optional<Trabajador> trabajadorOpt = leer(id);
-        if(trabajadorOpt.isPresent()){
-            Trabajador trabajador = trabajadorOpt.get();
-            trabajador.setSoftDelete(true);
+        Optional<Empresa> empresaOpt = leer(id);
+        if(empresaOpt.isPresent()){
+            Empresa empresa = empresaOpt.get();
+            empresa.setSoftDelete(true);
         }
-        return trabajadorOpt.isPresent();
+        return empresaOpt.isPresent();
     }
 
     public CadenaController getCadenaController() {

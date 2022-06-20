@@ -37,17 +37,18 @@ public class TrabajadorContractController {
     public Optional<Contrato> leer(int id){
         List<Contrato> contratos = cadenaController.leer().getContratos();
         if(id<contratos.size() && !contratos.get(id).isSoftDelete())
-            return Optional.of(contratos.get(id));
+        return Optional.of(contratos.get(id));
         return Optional.empty();
     }
     
-    public Optional<Trabajador> actualizar(int id, String name, String address, String CI){
-        Optional<Trabajador> trabajadorOpt = leer(id);
-        if(trabajadorOpt.isPresent()){
-            Trabajador trabajador = trabajadorOpt.get();
-            trabajador.setName(name);
-            trabajador.setAddress(address);
-            trabajador.setCI(CI);
+    public Optional<Contrato> actualizar(int idContrato,int idTrabajador, int idCasa,int daysQty, double cost){
+        Optional<Contrato> contratoOpt= leer(idContrato);
+        Optional<Trabajador> trabajadorOpt =  trabajadorController.leer(idTrabajador);
+        Optional<Casa> houseOpt = houseController.leer(idCasa);
+        if(contratoOpt.isPresent()){
+            Contrato contrato = contratoOpt.get();
+            contrato.setCasa(houseOpt.get());
+            contrato.
         }
         return trabajadorOpt;
     }
