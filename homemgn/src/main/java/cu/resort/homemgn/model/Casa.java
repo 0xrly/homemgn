@@ -10,7 +10,8 @@ public class Casa {
     private int itemQty;
     private boolean softDelete;
 
-    public Casa(int number, int bedQty, boolean hasPool, int itemQty) {
+    public Casa(int id,int number, int bedQty, boolean hasPool, int itemQty) {
+        this.id = id;
         this.number = number;
         this.bedQty = bedQty;
         this.hasPool = hasPool;
